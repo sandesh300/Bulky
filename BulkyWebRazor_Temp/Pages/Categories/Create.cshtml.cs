@@ -16,5 +16,11 @@ namespace BulkyWebRazor_Temp.Pages.Categories
         public void OnGet()
         {
         }
+        public IActionResult OnPost()
+        {
+            _db.Categories.Add(Category);
+            _db.SaveChanges();
+            return RedirectToPage("Index");
+        }
     }
 }
